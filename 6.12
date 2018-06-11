@@ -1,7 +1,7 @@
 心态崩了，昨天写的忘了保存了……
 emmmmm
 return终止函数运行并返回
-function提升，声明变量提升（赋值不提升），function优先级比var高
+function提升，声明变量提升（var）（赋值不提升），function优先级比var高
 var xx = 99;
 function a(){
 	alert(xx);
