@@ -23,5 +23,10 @@ bar.zoo()
 内建对象：Js提供的 数组、math、date
 宿主对象：浏览器提供的预定义对象（话说node就不包括这个了吧）form image element
 
-window.open()
+window.open(url,name,features)
 window.blur()
+	function popUp(winURL){
+	  window.open(winURL,'popup','width=320')
+	}
+	<a href='javascript:popUp('www.baidu.com')'>伪协议，平稳退化实现不能</a>	
+	<a href='http://www.baidu.com/' onclick="popUp(this.href;return false)"> 这就好了嘛</a>	
