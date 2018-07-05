@@ -30,3 +30,6 @@ window.blur()
 	}
 	<a href='javascript:popUp('www.baidu.com')'>伪协议，平稳退化实现不能</a>	
 	<a href='http://www.baidu.com/' onclick="popUp(this.href;return false)"> 这就好了嘛</a>	
+
+scrollBtoom :
+$ScrollBottom = $(doc).height() - $(win).height() - $(win).scrollTop();
