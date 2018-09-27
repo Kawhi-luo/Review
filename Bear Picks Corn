@@ -33,3 +33,9 @@ window.blur()
 
 scrollBtoom :
 $ScrollBottom = $(doc).height() - $(win).height() - $(win).scrollTop();
+
+title图标 16*16
+标题栏：
+<link rel="icon" href="ico地址" type="image/x-icon">
+收藏夹：
+<link rel="shortcut icon" href="ico地址" type="image/x-icon">
