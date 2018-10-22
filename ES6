@@ -1,0 +1,44 @@
+我记得之前有个ES6的来着，难道被我删除了？？？
+行吧……
+看了看之前写的东西 哇 要不再删删那点代码吧喂…
+回忆哈ES6都有啥东西…俩项目不让写ES6的整了几个月要忘光了、、、
+
+1.
+模板字符串…
+    var button_test = {
+        a:'点我一下'
+    }
+    button_test.b = '，快来呀';
+    $('.title').html(`<button class="btn">${button_test.a}${button_test.b}</button>`);
+
+    ``  ${}  两个搭配用奥
+
+2.
+let 块级
+const 块级 常量
+算是作用于优化吧感觉
+主要是没有变量提升辣种东西啦哈哈哈哈哈哈
+
+3.
+解构赋值
+  let [a, b, c] = [1, 2, 3];
+  
+  let [head, ...tail] = [1, 2, 3, 4];
+  head // 1
+  tail // [2, 3, 4]
+  
+  let [x, y, ...z] = ['a'];
+  x // "a"
+  y // undefined
+  z // []
+  
+4.
+三目运算符
+  扩展运算符将一个数组转为用逗号分隔的参数序列（不是字符串）
+  ...tail => 2 3 4
+  function three (a,b,c){
+    console.log(a+b+c)
+  }
+  three(...tail);
+
+5.
