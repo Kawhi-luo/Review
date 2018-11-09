@@ -39,3 +39,16 @@ title图标 16*16
 <link rel="icon" href="ico地址" type="image/x-icon">
 收藏夹：
 <link rel="shortcut icon" href="ico地址" type="image/x-icon">
+
+
+复杂逻辑判断
+const actions = {
+  'guest_1':()=>{/*do sth*/},
+  'guest_2':()=>{/*do sth*/},
+  //....
+}
+
+const onButtonClick = (identity,status)=>{
+  let action = actions[`${identity}_${status}`] || actions['default']
+  action.call(this)
+}
