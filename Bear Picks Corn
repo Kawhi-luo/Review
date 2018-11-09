@@ -52,3 +52,17 @@ const onButtonClick = (identity,status)=>{
   let action = actions[`${identity}_${status}`] || actions['default']
   action.call(this)
 }
+
+ajax.then()
+then函数的第一个参数是成功之后执行的函数，第二个参数是失败之后执行的函数。而且then函数还可以链式连接。
+var ajax = $.ajax('data.json')
+ajax.then(function () {
+        console.log('success 1')
+    }, function () {
+        console.log('error 1')
+    })
+    .then(function () {
+        console.log('success 2')
+    }, function () {
+        console.log('error 2')
+    })
