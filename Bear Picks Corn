@@ -1,5 +1,3 @@
-心态崩了，昨天写的忘了保存了……
-emmmmm
 return终止函数运行并返回
 function提升，声明变量提升（var）（赋值不提升），function优先级比var高
 var xx = 99;
@@ -20,9 +18,11 @@ bar.zoo()
 
 用户定义对象：自己写的
 内建对象：Js提供的 数组、math、date
-宿主对象：浏览器提供的预定义对象（话说node就不包括这个了吧）form image element
+宿主对象：浏览器提供的预定义对象 form image element
 
 window.open(url,name,features)
+//name 必须为'__blank'否则可能不打开新页面
+
 window.blur()
 	function popUp(winURL){
 	  window.open(winURL,'popup','width=320')
@@ -79,6 +79,7 @@ Object.defineProperty(data, 'text', {
 input.oninput = function(e) {
     data.text = e.target.value;
 }
+//oninput 事件在元素值发生变化是立即触发， onchange 在元素失去焦点时触发
 
 
 数组全排列
@@ -102,3 +103,20 @@ function permute(input) {
   return main(input);
 };
 console.log(permute([0, 1, 2, 3]));
+
+SEO：
+<title>Apple (中国大陆) - 官方网站</title>
+<meta name='description' content='探索 Apple 充满创新的世界，选购各式 iPhone、iPad、Apple Watch 和 Mac，浏览各种配件、娱乐产品，并获得相关产品的专家支持服务。'></meta>
+<meta name='Keywords' content='苹果官网, Apple官网, 苹果中国, Apple中国'></meta>
+合理的title、description、keywords：搜索对这三项的权重逐个减小，title强调重点，关键词不超过2次，而且要靠前，不同页面title要有所不同；description把页面内容高度概括，长度合适，不可过分堆砌关键词，不同页面description有所不同；keywords列举出重要关键词即可
+重要内容HTML代码放在最前：搜索引擎抓取HTML顺序是从上到下，有的搜索引擎对抓取长度有限制，保证重要内容一定会被抓取
+重要内容不要用js输出：爬虫不会执行js获取内容;少用iframe：搜索引擎不会抓取iframe中的内容
+非装饰性图片必须加alt
+
+会话跟踪：
+cookie
+session
+url重写
+隐藏input
+ip地址
+webStorage
