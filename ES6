@@ -42,3 +42,81 @@ const 块级 常量
   three(...tail);
 
 5.
+promise
+    let p = new Promise(function (res,rej) {
+		setTimeout(function () {
+            res('数据')
+        },1000)
+    })
+
+	let p2 = function (data2) {
+		return new Promise(function (res,rej) {
+            setTimeout(function () {
+                res(data2)
+            },2000)
+        })
+    }
+
+	p.then(function (data) {
+	    console.log('接受'+data)
+		return p2(data)
+    }).then(function (data2) {
+        console.log(data2)
+		console.log('end')
+    })
+    //1s 接受数据
+    //3S 数据、end
+    
+    all
+    并行执行异步操作，在所有异步操作执行完并且执行结果都是成功的时候才执行回调
+    把所有异步操作的结果放进一个数组中传给then,然后再执行then方法的成功回调将结果接收
+    
+    race
+    谁先执行完成就先执行回调
+6.
+class
+
+es5
+var point = function(x,y){
+	this.x = x;
+	this.y = y;
+}
+point.prototype.toString = function(){
+	return this.x + this.y
+}
+var p = new point(1,2)
+console.log(p.toString())
+
+es6
+class pointe {
+	constructor(x,y){
+		this.x = x;
+		this.y = y;
+		this.children = this.toString(x,y)
+	}
+	toString(x,y){
+		return [x,y]
+	}
+}
+console.log(new pointe(2,3))
+
+class A {
+  constructor() {
+    this.x = 1;
+  }
+  static print() {
+    console.log(this.x);
+  }
+}
+
+class B extends A {
+	constructor(){
+		super();
+		this.x = 2
+	}
+	static m(){
+		super.print();
+	}
+}
+B.x = 3;
+B.m()
