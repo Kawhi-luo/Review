@@ -120,3 +120,32 @@ url重写
 隐藏input
 ip地址
 webStorage
+
+es6 array.includes(item) 代替 array.indexOf(item) !== -1
+判断是否存在
+if ('nonExistingProp' in object) {
+  // ...
+}
+代替
+if (object.nonExistingProp === undefined) {
+  // ...
+}
+
+const defaultProps = {
+  optionalProp1: 'Default value 1'
+};
+代替
+if (object.optionalProp1 === undefined) {
+  object.optionalProp1 = 'Default value 1';
+}
+
+function foo(param1, param2 = 'Some default value') {
+  // ...
+}
+代替
+function foo(param1, param2) {
+  if (param2 === undefined) {
+    param2 = 'Some default value';
+  }
+  // ...
+}
