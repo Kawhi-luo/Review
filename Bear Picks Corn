@@ -149,3 +149,39 @@ function foo(param1, param2) {
   }
   // ...
 }
+
+双向绑定原理
+var data = {};
+const input = document.getElementById('input');
+Object.defineProperty(data, 'text', {
+  set(value) {
+    input.value = value;
+    this.value = value;
+    console.log(data);
+  }
+});
+input.oninput = function(e) {
+  data.text = e.target.value;
+}
+
+数组全排列
+function permute(input) {
+  var permArr = [],
+  usedChars = []; 
+  function main(input){
+    var i, ch;
+    for (i = 0; i < input.length; i++) {
+      ch = input.splice(i, 1)[0]; 
+      usedChars.push(ch);
+      if (input.length == 0) {
+	permArr.push(usedChars.slice());//return new
+      }
+      main(input);
+      input.splice(i, 0, ch);
+      usedChars.pop(); //qu wei
+    }
+    return permArr
+  }
+  return main(input);
+};
+console.log(permute([0, 1, 2, 3]));
