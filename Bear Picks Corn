@@ -185,3 +185,44 @@ function permute(input) {
   return main(input);
 };
 console.log(permute([0, 1, 2, 3]));
+
+apply
+function Person(name,age) {
+	this.name=name;
+	this.age=age;
+}
+/*定义一个学生类*/  
+functionStudent(name,age,grade) {
+	Person.apply(this,arguments);
+	this.grade=grade;
+}
+//创建一个学生类  
+var student=new Student("zhangsan",21,"一年级");
+//student.name zhangsan
+
+防抖 超过指定间隔的时候，任务才会执行，避免频繁操作 搜索框搜索
+function debounce(fn,time){
+    let timer = null;
+    return function(){
+        if(timer){
+            clearTimeout(timer)
+        }
+        timer = setTimeout(()=>{
+            fn.apply(this,arguments)
+        },time)
+    }
+}
+节流  在指定的时间间隔内只执行一次 scroll事件
+function throttle(fn,time){
+    let canRun = true;
+    return function(){
+        if(!canRun){
+            return
+        }
+        canRun = false;
+        setTimeout(() => {
+            fn.apply(this,arguments);
+            canRun = true;
+        },time)
+    }
+}
