@@ -234,3 +234,9 @@ function throttle(fn,time){
 	flat(0) 不进行操作;
 	flat(1) [1,2,arr,6];
 	flat(Infinity) 拉平所有;
+	
+	reduce为数组中的每一个元素依次执行回调函数 (累加，累乘)
+	var arr = [1, 2, 3, 4];
+	var sum = arr.reduce(function(prev, cur, index, arr) {
+	    return prev + cur;
+	})
