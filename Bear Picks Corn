@@ -226,3 +226,11 @@ function throttle(fn,time){
         },time)
     }
 }
+
+
+	flat 数组拉平
+	let ary = [1, [2, [3, [4, 5]]], 6];
+	console.log(ary.flat());  // [1,2,arr,6]
+	flat(0) 不进行操作;
+	flat(1) [1,2,arr,6];
+	flat(Infinity) 拉平所有;
